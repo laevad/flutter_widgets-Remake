@@ -1,8 +1,8 @@
-import 'package:Flutter_Widgets/recipemenu.dart';
+import 'package:Flutter_Widgets/widgets/recipe_menu.dart';
 import 'package:flutter/material.dart';
 
-import 'accountmenu.dart';
-import 'recipedescription.dart';
+import '../widgets/account_menu.dart';
+import '../widgets/recipe_description.dart';
 
 class HomePage extends StatelessWidget {
   @override

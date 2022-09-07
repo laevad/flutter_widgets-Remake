@@ -1,12 +1,13 @@
   import 'package:flutter/material.dart';
 
-import 'homepage.dart';
-import 'loginpage.dart';
-import 'recipespage.dart';
-import 'registrationpage.dart';
-import 'models/favoritesmodel.dart';
+import 'pages/homepage.dart';
+import 'pages/login_page.dart';
+import 'pages/recipes_page.dart';
+import 'pages/registration_page.dart';
+import 'models/favorites_model.dart';
 import 'package:provider/provider.dart';
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(YummyRecipes());
 }
 

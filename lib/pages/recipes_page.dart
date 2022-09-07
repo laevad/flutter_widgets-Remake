@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'models/favoritesmodel.dart';
+import '../models/favorites_model.dart';
 
 class RecipesPage extends StatelessWidget {
   final _recipes = List<String>.generate(100, (i) => "Recipe ${i + 1}");

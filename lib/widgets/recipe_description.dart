@@ -26,7 +26,7 @@ class RecipeDescription extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          Text("by Cookmaster"),
+          Text("by Cook master"),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

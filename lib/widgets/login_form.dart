@@ -1,4 +1,10 @@
+
+
+import '../models/auth_model.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../services/login_services.dart';
 
 class LoginForm extends StatefulWidget {
   @override
@@ -20,18 +26,31 @@ class LoginFormState extends State<LoginForm> {
   final _formKey = GlobalKey<FormState>();
   final emailExp =
       new RegExp(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)");
-  final passTxtController = TextEditingController();
+  final emailController = TextEditingController();
+  final passController = TextEditingController();
 
   @override
   void dispose() {
-    passTxtController.dispose();
+    emailController.dispose();
+    passController.dispose();
     super.dispose();
   }
 
-  _login() {
+  _login() async{
     if (_formKey.currentState.validate()) {
-      Navigator.pushNamedAndRemoveUntil(
-          context, '/', (Route<dynamic> route) => false);
+      String email = emailController.text;
+      String password = passController.text;
+      var loginResult = await loginAuth(email, password);
+      if(loginResult.errMsg == null){
+        Provider.of<AuthModel>(context, listen: false)
+            .login(loginResult.token);
+        Navigator.pushNamedAndRemoveUntil(
+            context, '/', (Route<dynamic> route) => false);
+        ScaffoldMessenger.of(context).hideCurrentSnackBar();
+      }else{
+        ScaffoldMessenger.of(context).hideCurrentSnackBar();
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${loginResult.errMsg}')));
+      }
     }
   }
 
@@ -43,6 +62,7 @@ class LoginFormState extends State<LoginForm> {
           SizedBox(height: 70),
           TextFormField(
               decoration: txtDecoration('Username'),
+              controller: emailController,
               validator: (value) {
                 if (value.isEmpty) {
                   return 'Enter your username';
@@ -53,7 +73,7 @@ class LoginFormState extends State<LoginForm> {
           TextFormField(
               obscureText: true,
               decoration: txtDecoration('Password'),
-              controller: passTxtController,
+              controller: passController,
               validator: (value) {
                 if (value.isEmpty) {
                   return 'Enter your password';

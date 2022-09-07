@@ -1,4 +1,5 @@
-  import 'package:flutter/material.dart';
+  import 'models/auth_model.dart';
+import 'package:flutter/material.dart';
 
 import 'pages/homepage.dart';
 import 'pages/login_page.dart';
@@ -14,16 +15,21 @@ void main() {
 class YummyRecipes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => FavoritesModel(),
-      child: MaterialApp(title: "Yummy Recipes", initialRoute: '/', routes: {
-        '/': (context) => HomePage(),
-        '/recipes': (context) => RecipesPage(),
-        '/login': (context) => LoginPage(),
-        '/registration': (context) => RegistrationPage()
-      }
-        // home: HomePage(),
-      ),
+      return MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (context) => FavoritesModel(),),
+          ChangeNotifierProvider(create: (context) => AuthModel(),),
+        ],
+        child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: "Yummy Recipes", initialRoute: '/login', routes: {
+          '/': (context) => HomePage(),
+          '/recipes': (context) => RecipesPage(),
+          '/login': (context) => LoginPage(),
+          '/registration': (context) => RegistrationPage()
+        }
+          // home: HomePage(),
+        ),
     );
   }
 }

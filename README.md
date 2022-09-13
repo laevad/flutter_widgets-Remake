@@ -1,16 +1,26 @@
-# Flutter_Widgets
+  # DON'T BE A DICK PUBLIC LICENSE
 
-A new Flutter project.
+  > Version 1.1, December 2016
 
-## Getting Started
+  > Copyright (C) [2022] [frave developer]
 
-This project is a starting point for a Flutter application.
+  Everyone is permitted to copy and distribute verbatim or modified
+  copies of this license document.
 
-A few resources to get you started if this is your first Flutter project:
+  > DON'T BE A DICK PUBLIC LICENSE
+  > TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+  1. Do whatever you like with the original work, just don't be a dick.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+     Being a dick includes - but is not limited to - the following instances:
+
+   1a. Outright copyright infringement - Don't just copy this and change the name.
+   1b. Selling the unmodified original with no work done what-so-ever, that's REALLY being a dick.
+   1c. Modifying the original work to contain hidden harmful content. That would make you a PROPER dick.
+
+  2. If you become rich through modifications, related works/services, or supporting the original work,
+  share the love. Only a dick would make loads off this work and not buy the original work's
+  creator(s) a pint.
+
+  3. Code is provided with no warranty. Using somebody else's code and bitching when it goes wrong makes
+  you a DONKEY dick. Fix the problem yourself. A non-dick would submit the fix back.
